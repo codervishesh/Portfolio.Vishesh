@@ -41,8 +41,11 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>"
   />
 
-  <!-- Animations & Theme Variables -->
   <style>
+    /* ===============================
+       CSS-only Animations
+    =============================== */
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -106,6 +109,10 @@
       }
     }
 
+    /* ===============================
+       Theme Variables (Dark Default)
+    =============================== */
+
     :root {
       --primary-color: #6366f1;
       --primary-dark: #4f46e5;
@@ -114,25 +121,58 @@
       --text-light: #cbd5e1;
       --bg-color: #0f172a;
       --bg-light: #1e293b;
+      --bg-dark: #0f172a;
       --card-bg: #1e293b;
       --border-color: #334155;
-      --shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.3);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+        0 4px 6px -2px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+        0 10px 10px -5px rgba(0, 0, 0, 0.2);
       --transition: all 0.3s ease;
       --radius: 8px;
       --radius-lg: 12px;
       --radius-xl: 16px;
+    }
+
+    /* ===============================
+       Light Theme (:target)
+    =============================== */
+
+    #theme-light:target {
+      --primary-color: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary-color: #0ea5e9;
+      --text-color: #1e293b;
+      --text-light: #64748b;
+      --bg-color: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-dark: #f1f5f9;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    #theme-dark,
+    #theme-light {
+      position: absolute;
+      left: -9999px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Theme Anchors -->
-  <a id="theme-dark"></a>
-  <a id="theme-light"></a>
+  <!-- Hidden Theme Anchors -->
+  <a id="theme-dark" href="#theme-dark"></a>
+  <a id="theme-light" href="#theme-light"></a>
 
-  <!-- Navigation -->
+  <!-- ===============================
+       NAVBAR
+  =============================== -->
+
   <nav class="navbar">
     <div class="container">
       <a href="#home" class="logo">VJ</a>
@@ -144,26 +184,33 @@
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#contact" class="nav-link">Contact</a>
+
         <a href="#theme-light" class="theme-toggle-btn">
           <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
+          <i class="fas fa-moon" style="display: none"></i>
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ===============================
+       HERO SECTION
+  =============================== -->
+
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
         <p class="hero-subtitle">Hello, I'm</p>
         <h1 class="hero-title">Vishesh Jain</h1>
         <h2 class="hero-role">
-          Junior Web Developer & <span class="highlight">Problem Solver</span>
+          Junior Web Developer &
+          <span class="highlight">Problem Solver</span>
         </h2>
+
         <p class="hero-description">
           Passionate web developer from Chandigarh University with expertise in
-          front-end development, DSA problem solving, and hackathons.
+          front-end development, DSA problem solving, and participating in
+          hackathons & coding events.
         </p>
 
         <div class="hero-buttons">
@@ -171,15 +218,26 @@
           <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
+
+      <div class="hero-image">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===============================
+       FOOTER
+  =============================== -->
+
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">
-        © 2023 Vishesh Jain. Junior Web Developer | Chandigarh University
-      </p>
+      <div class="footer-content">
+        <p class="footer-text">
+          © 2023 Vishesh Jain. Junior Web Developer | Chandigarh University
+        </p>
+      </div>
     </div>
   </footer>
 
